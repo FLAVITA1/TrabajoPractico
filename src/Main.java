@@ -13,49 +13,13 @@ public class Main {
                 String[] lineaSeparada = linea.split(";");
 
 
-
             }
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
 
         System.out.println("Puntaje = + Puntaje ");
-
-
-        public class Pronostico {
-            String equipo1;
-            String equipo2;
-            int gol1;
-            int gol2;
-
-        }
-        public class partido;
-        {
-            public class Ronda {
-                String pronostico;
-                List<partido> partidos;
-
-                public Ronda() {
-                    List<Partidos> =new ArrayList<Partido>();
-                    Partido equipo1 = new Partido("Equipo 1");
-                    partidos.add(equipo1);
-
-                    Partido equipo2 = new Partido("Equipo 2");
-                    equipo2.correlativos.add(equipo1);
-                    partidos.add(equipo2);
-                }
-
-                public Ronda() {
-                    List<Resultado> =mew ArrayList<Resultado > ();
-                    Resultado equipo1 = new Resultado("Equipo1");
-                    resultado.add(gol1);
-
-                    Resultado equipo2 = new Resultado("Equipo2");
-                    equipo2.partidoganado.add(equipo2);
-                    resultado.add(gol2);
-
-                }
-            }
-        }
     }
+
+
 }
