@@ -5,4 +5,5 @@ public class Pronostico {
     int gol1;
     int gol2;
 
+
 }
