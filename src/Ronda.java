@@ -1,15 +1,14 @@
 public class Ronda {
-    String pronostico;
-    List<Partido> partidos;
-
 
     public Ronda() {
-        List <partidos> = new ArrayList<Partido>();
-        Partido equipo1 = new Partido("Equipo 1");
-        partidos.add(equipo1);
+        Ronda ronda1= new Ronda();
 
-        Partido equipo2 = new Partido("Equipo 2");
-        equipo2.correlativos.add(equipo1);
-        partidos.add(equipo2);
-    }
+        ronda1.partidos[0]// nos da el primer partido
+        ronda1.partidos[1]// nos da el segundo partido
+        ronda1.partidos[i]// nos da el partido
+
+        partidos: Partido[1]
+
+
+
 }
