@@ -7,3 +7,16 @@ public class Pronostico {
 
 
 }
+public class Pronostico {
+    Equipo equipo;
+    Partido partido;
+    public Pronostico(Equipo equipo, Partido partido) {
+        this.equipo = equipo;
+        this.partido = partido;
+    }
+
+    public boolean ganados() {
+        int posicionPartido = this.equipo.partidosGanados.indexOf(this.partido);
+        return (posicionPartido != -1);
+    }
+}
