@@ -1,31 +1,42 @@
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-
 public class Main {
     public static void main(String[] args) {
-        String Resultado1 = "src/resultado1.partido1";
-        String Pronostico1 = "src/pronostico1.partido1";
+        List<Partido> partido = new ArrayList<>();
+        List<Pronostico> pronostico = new ArrayList<>();
 
-        int Puntaje = + 0;
         try {
-            for (String linea : Files.readAllLines(Paths.get(Resultado1))) {
-                String[] lineaSeparada = linea.split(";");
-
-
+            for (String linea : Files.readAllLines(Paths.get("src/partido.cvs"))) {
+                String[] lineaSeparada = linea.split( ";");
+            partido.add(new Partido(
+                    Interger.parseInt(lineaSeparada[0]),
+                    lineaSeparada[1],
+                    FloatparseFloat(lineaSeparada[2])));
             }
-        } catch (IOException e) {
-            throw new RuntimeException(e);
+
+        for (String linea: Files.readALlines(Paths.get( "src/pronostico.cvs"))) {
+            String[] lineaSeparada = linea.split(";");
+            pronostico.add(new Pronostico(
+                    Interger.parseInt(lineaSeparada[0]),
+                    double.parseDouble(lineaSeparada[2])))
         }
 
-        System.out.println("Puntaje = + Puntaje ");
-    }
+        } catch (IOException e) {
+            System.out.println("Leyendo archivo");
+        }
+
+
+
 
     private Object equipo;
     Equipo equip = new Equipo(nombre"Argentina", equipo"1");
      System.out.println(equip.nombre);
 
 /////////////////////////
+
+
+
     List<Partido> partidos = new ArrayList<>();
 
     // agrego Argentina
