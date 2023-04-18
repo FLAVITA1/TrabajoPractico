@@ -31,7 +31,7 @@ public class Main {
         List<String[]> resultados = leerResultados();
         List<String[]> pronosticos = leerPronosticos();
 
-        System.out.println("Fase\tRonda\tnombre equipo 1\tnombre equipo 2\tgoles equipo 2");
+       System.out.println("Fase\tRonda\tnombre equipo 1\tnombre equipo 2\tgoles equipo 2");
         for (String[] esteResultado : resultados) {
             System.out.println(esteResultado[0] + "\t" + esteResultado[1] + "\t" + esteResultado[2] + "\t" + esteResultado[3] + "\t" + esteResultado[4] + "\t" + esteResultado[5]);
 
@@ -42,4 +42,21 @@ public class Main {
          }
 
         }
+
+        for(int e = 0; <equipos.size(); e++)  {
+            equipo esteEquipo = equipos.get(e);
+            for (int p = 0; p < partidos.size(); p++) {
+                Partido estePartido = partidos.get(p);
+                if (estePartido.resultado == esteEquipo.resultado) {
+                    esteEquipo.total = esteEquipo.cantidad * estePartido.ganado;
+                }
+            }
+    }
+           for(int e = 0; <equipos.size(); e++)  {
+        Equipo esteEquipo = equipos.get(e);
+        for (int p = 0; p < partidos.size(); p++) {
+            Partido estePartido = partidos.get(p);
+            if (estePartido.resultado == esteEquipo.resultado) {
+                System.out.println("se gano el partido [" + estePartido.nombre + " x " + esteEquipo.cantidad + )
+            }
     }
