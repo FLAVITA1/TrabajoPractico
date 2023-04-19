@@ -1,5 +1,6 @@
 
 public class Equipo {
+    public Object resultado;
     String nombre;
     String goles;
     List<Partido> partidosGanados;

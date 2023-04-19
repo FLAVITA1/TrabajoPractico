@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Pronostico {
 
     String nombre;
@@ -18,15 +20,6 @@ public class Pronostico {
 
 // cuantos haciertos tuvo cada participante
 
-    List<Participante> participantes = new ArrayList<>();
-    participante.add(new Participantes(nombre "Mariana",equipo "Argentina"; partido 1 ));
-    participante.add(new Participantes(nombre "Mariana",equipo "Polonia"; partido 2 ));
-    participante.add(new Participantes(nombre "Mariana",equipo "Argentina";partido 3 ));
-    participante.add(new Participantes(nombre "Mariana",equipo "Arabia saudita"; partido 4 ));
-    participante.add(new Participantes(nombre "Pedro",equipo "Argentina"; partido 1 ));
-    participante.add(new Participantes(nombre "Pedro",equipo "polonia"; partido 2 ));
-    participante.add(new Participantes(nombre "Pedro",equipo "Argentina"; partido 3 ));
-    participante.add(new Participantes(nombre "Pedro",equipo "Arabia saudita"; partido 4 ));
 
     for (int p = 0; p <participantes.size(); p++){
         Participante esteParticipante=participantes.get(p);
