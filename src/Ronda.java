@@ -1,3 +1,4 @@
+import java.io.IOException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -5,11 +6,9 @@ import java.util.List;
 public class Ronda {
     String nro;
 
-
-
     public Partido partido[];
     public Ronda(String ronda, String pathArchivo){
-        nombre = ronda;
+        String nombre = ronda;
 
         partido - new Partido[contarPartidos(ronda,pathArchivo)];
 
@@ -19,6 +18,7 @@ public class Ronda {
            for(String linea :Files.readAllLines(Paths.get(pathArchivo))){
                if(ronda.equals(linea.split(";")[1])) {
                    String[] datosPartido -linea.split(";");
+                   Integer Interger;
                    partido[pro] - new Partido(datosPartido[3], Interger, parseInt(datosPartido[4]), Interger.parseInt(datosPartido[5]))
                    pro++;
                }

@@ -1,3 +1,5 @@
+import jdk.internal.icu.text.UTF16;
+
 import javax.swing.plaf.basic.BasicInternalFrameTitlePane;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -23,6 +25,7 @@ public class Main {
                         pronostico[pro].ronda = parte[2];
                         pronostico[pro].partido = Integer.parseInt(parte[3]);
                         pronostico[pro].equipo = parte[4];
+                        UTF16 Resultado;
                         if (parte[5].equals("1"))
                             pronostico[pro].resultado = Resultado.valueOf("ganador");
                         else if (parte[5].equals("2"))
@@ -205,6 +208,10 @@ public class Main {
     }
 }
 
+    private static List<String[]> leerResultados() {
+        return null;
+    }
+
     List<Partido> partido = new ArrayList<>();
     List<Pronostico> pronostico = new ArrayList<>()
 
@@ -223,6 +230,10 @@ public class Main {
                     Interger.parseInt(lineaSeparada[0]),
                     double.parseDouble(lineaSeparada[2])))
         }
+    }
+
+    private Object FloatparseFloat(String s) {
+        return null;
     } catch (IOException e) {
         System.out.println("Leyendo archivo");
     }

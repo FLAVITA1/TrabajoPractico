@@ -2,6 +2,10 @@ import java.util.ArrayList;
 
 public class Pronostico {
 
+    public String ronda;
+    public String fase;
+    public int partido;
+    public Object resultado;
     String nombre;
     String equipo;
     int haciertos;
