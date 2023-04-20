@@ -7,29 +7,51 @@ import java.util.ArrayList;
 import java.util.List;
 public class Main {
     public static void main(String[] args) {
-        List<Partido> partido = new ArrayList<>();
-        List<Pronostico> pronostico = new ArrayList<>();
+       public class Persona {
+       public String nombre;
+       public Pronostico[] pronostico;
 
-        try {
-            for (String linea : Files.readAllLines(Paths.get("src/partido.cvs"))) {
-                String[] lineaSeparada = linea.split(";");
-                partido.add(new Partido(
-                        Interger.parseInt(lineaSeparada[0]),
-                        lineaSeparada[1],
-                        FloatparseFloat(lineaSeparada[2])));
-            }
+       public Persona(String nombre,String pathArchivo) {
+            this.nombre - nombre;
 
-            for (String linea : Files.readAllLines(Paths.get("src/pronostico.cvs"))) {
-                String[] lineaSeparada = linea.split(";");
-                pronostico.add(new Pronostico(
-                        Interger.parseInt(lineaSeparada[0]),
-                        double.parseDouble(lineaSeparada[2])))
+            try {
+                int pro = 0;
+                for (String Linea : Files.readAllLines(Paths.get(pathArchivo))) {
+                    String[] parte = linea.split(";");
+                    if (nombre.equals(parte[0])) {
+                        pronostico[pro].fase = parte[1];
+                        pronostico[pro].ronda = parte[2];
+                        pronostico[pro].partido = Integer.parseInt(parte[3]);
+                        pronostico[pro].equipo = parte[4];
+                        if (parte[5].equals("1"))
+                            pronostico[pro].resultado = Resultado.valueOf("ganador");
+                        else if (parte[5].equals("2"))
+                            pronostico[pro].resultado = Resultado.valueOf("perdedor");
+                        else
+                            pronostico[pro].resultado = Resultado.valueOf("empate");
+                        pro++;
+                    }
+                }
+
+            } catch (IOException e) {
+                System.err.println("Error leyendo archivo: " + pathArchivo + ". Exception: " + e.toString());
             }
-        } catch (IOException e) {
-            System.out.println("Leyendo archivo");
         }
-
-
+        public Object ListaPronosticos;
+        Persona(String nombre,ListaPronosticos listaPronostico){
+           this.nombre = nombre;
+           int pro =0;
+           for (String linea : listaPronostico.pronosticos){
+               String[] parte = linea.split(";");
+               if(nombre.equals(parte[0]))
+                   pro++;
+           }
+           pronostico = new Pronostico[pro];
+           for(pro = 0; pro<pronostico.length; pro++))
+               pronostico[pro] = new Pronostico();
+           pro =0;
+        }
+       }
 ///////////////////////////////////
         List<String[]> resultados = leerResultados();
         List<String[]> pronosticos = leerPronosticos();
@@ -45,32 +67,54 @@ public class Main {
         }
 
 
+        // Va a devolver una Lista con un arreglo de String que va a contener:
+        // Posicion 0: Ronda
+        // Posicion 1: Fase
+        // Posicion 2: Nombre equipo 1
+        // Posicion 3: Nombre equipo 2
+        // Posicion 4: Goles equipo 1
+        // Posicion 5: Goles equipo 2
+        public static List<String[]> leerResultados() {
+            List<String[]> resultados = new ArrayList<>();
 
-
-
-
-        for (int e = 0; <equipos.size();e++)
-
-    {
-        equipo esteEquipo = equipos.get(e);
-        for (int p = 0; p < partidos.size(); p++) {
-            Partido estePartido = partidos.get(p);
-            if (estePartido.resultado == esteEquipo.resultado) {
-                esteEquipo.total = esteEquipo.cantidad * estePartido.ganado;
+            // Cargamos el Driver
+            try {
+                Class.forName("com.mysql.jdbc.Driver");
+            } catch (ClassNotFoundException e) {
+                System.out.println("Error cargando el driver");
             }
-        }
-    }
-           for (int e = 0; <equipos.size(); e++)
 
-    {
-        Equipo esteEquipo = equipos.get(e);
-        for (int p = 0; p < partidos.size(); p++) {
-            Partido estePartido = partidos.get(p);
-            if (estePartido.resultado == esteEquipo.resultado) {
-                System.out.println("se gano el partido [" + estePartido.nombre + " x " + esteEquipo.cantidad +)
+            try {
+                // Creamos la conexión
+                Connection con = DriverManager.getConnection(
+                        "jdbc:mysql://sql10.freemysqlhosting.net:3306/sql10612293",
+                        "sql10612293", "ACwUKDKvbY");
+                Statement stmt = con.createStatement();
+
+                // El Query que vamos a correr
+                ResultSet rs = stmt.executeQuery("SELECT FASE, RONDA, E1.EQUIPO AS EQUIPO_1, E2.EQUIPO AS EQUIPO_2, GOLES_1, GOLES_2 FROM RESULTADOS R JOIN EQUIPOS E1 on R.ID_EQUIPO_1 = E1.ID_EQUIPO JOIN EQUIPOS E2 on R.ID_EQUIPO_2 = E2.ID_EQUIPO");
+                while (rs.next()) {
+                    String[] fila = new String[6];
+                    fila[0] = rs.getString("FASE");
+                    fila[1] = rs.getString("RONDA");
+                    fila[2] = rs.getString("EQUIPO_1");
+                    fila[3] = rs.getString("EQUIPO_2");
+                    fila[4] = rs.getString("GOLES_1");
+                    fila[5] = rs.getString("GOLES_2");
+                    resultados.add(fila);
+                }
+                con.close();
+            } catch (SQLException e) {
+                System.out.println("Error con SQL");
             }
+
+            return resultados;
         }
-    }
+
+
+
+
+
 
     // Va a devolver una Lista con un arreglo de String que va a contener:
     // Posicion 0: Ronda
@@ -158,5 +202,28 @@ public class Main {
         }
 
         return pronosticos;
+    }
+}
+
+    List<Partido> partido = new ArrayList<>();
+    List<Pronostico> pronostico = new ArrayList<>()
+
+        try {
+        for (String linea : Files.readAllLines(Paths.get("src/partido.cvs"))) {
+            String[] lineaSeparada = linea.split(";");
+            partido.add(new Partido(
+                    Interger.parseInt(lineaSeparada[0]),
+                    lineaSeparada[1],
+                    FloatparseFloat(lineaSeparada[2])));
+        }
+
+        for (String linea : Files.readAllLines(Paths.get("src/pronostico.cvs"))) {
+            String[] lineaSeparada = linea.split(";");
+            pronostico.add(new Pronostico(
+                    Interger.parseInt(lineaSeparada[0]),
+                    double.parseDouble(lineaSeparada[2])))
+        }
+    } catch (IOException e) {
+        System.out.println("Leyendo archivo");
     }
 }

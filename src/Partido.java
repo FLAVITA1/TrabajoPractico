@@ -9,6 +9,9 @@ public class Partido {
     public Partido(String nombre) {
         this equipo1 = equipo1;
         this equipo2 = equipo2;
+        this goles1 = goles1;
+        this goles2 = goles2;
+
     }
 
 
