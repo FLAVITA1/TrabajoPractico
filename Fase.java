@@ -3,7 +3,7 @@ public class Fase {
     public Ronda ronda[];
 
     public Fase(String nombre, String pathArchivo) {
-        this.nombre - nombre;
+        this.nombre = nombre;
 
         String[] nombresRonda = rondas(pathArchivo);
 

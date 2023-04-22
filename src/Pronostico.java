@@ -17,29 +17,33 @@ public class Pronostico {
     }
 
     public boolean ganados()
-    int posicionPartido = this.equipo.partidosGanados.indexOf(this.partido);
-        return (posicionPartido != -1);
 
+    int posicionPartido = this.equipo.partidosGanados.indexOf(this.partido);
+        return(posicionPartido !=-1);
 
 
 // cuantos haciertos tuvo cada participante
 
 
-    for (int p = 0; p <participantes.size(); p++){
-        Participante esteParticipante=participantes.get(p);
+    for(
+    int p = 0; p<participantes.size();p++)
+
+    {
+        Participante esteParticipante = participantes.get(p);
         int sumahaciertos = 0;
-        for(int h = 0;h<haciertos.size();h++){
-        Haciertos esteHacierto = haciertos.get(h);
-        for(int e = 0; e <esteHacierto.equipoGanador.size();e++){
-        Equipo esteEquipo = estehacierto.equipoGanador.get(e);
+        for (int h = 0; h < haciertos.size(); h++) {
+            Haciertos esteHacierto = haciertos.get(h);
+            for (int e = 0; e < esteHacierto.equipoGanador.size(); e++) {
+                Equipo esteEquipo = estehacierto.equipoGanador.get(e);
 
-        if(esteParticipante.equipo.equals(esteEquipo.nombre)){
-        sumaHaciertos++;
+                if (esteParticipante.equipo.equals(esteEquipo.nombre)) {
+                    int sumaHaciertos;
+                    sumaHaciertos++;
+                }
+            }
         }
-        }
-        }
-
-        }
-
 
     }
+
+
+}

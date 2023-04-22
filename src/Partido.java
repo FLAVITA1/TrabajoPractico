@@ -18,7 +18,8 @@ i
     }
      public Resultado resultado(String equipo){
 
-    if(equipo.equals(equipo1)) {
+         UTF16 Resultado;
+         if(equipo.equals(equipo1)) {
         if (golesEquipo1 > golesEquipo2)
             return Resultado.valueOf("ganador");
         else if (golesEquipo1 == golesEquipo2)
