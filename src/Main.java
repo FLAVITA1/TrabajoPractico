@@ -30,11 +30,13 @@ public class Main {
             String user = args[1].split(";")[1];
             String pass = args[1].split(";")[2];
             ListaPronostico listaronosticos = new ListaPronosticos(url, user, pass);
+            Object listasPronosticos;
             nombresPersona = personas(listasPronosticos);
             persona = new Persona(nombresPersona.length);
 
             for (int per -0; per < persona.length ;
             per++){
+                ListaPronosticos listaPronosticos;
                 persona[per] = new Persona(nombresPersona[per], listaPronosticos);
 
             }
@@ -57,33 +59,29 @@ public class Main {
 
 }
 
-
-
-
-
-    public Object ListaPronosticos
+    public static Object ListaPronosticos
 
 
 }
-    List<Partido> partido = new ArrayList<>();
-    List<Pronostico> pronostico = new ArrayList<>();
+    List<Partido> partido=new ArrayList<>();
+        List<Pronostico> pronostico=new ArrayList<>();
 
         try{
-                for(String linea:Files.readAllLines(Paths.get("src/partido.cvs"))){
-                String[]lineaSeparada=linea.split(";");
-                partido.add(new Partido(
-                Interger.parseInt(lineaSeparada[0]),
-                lineaSeparada[1],
-                FloatparseFloat(lineaSeparada[2])));
-                }
+        for(String linea:Files.readAllLines(Paths.get("src/partido.cvs"))){
+        String[]lineaSeparada=linea.split(";");
+        partido.add(new Partido(
+        Interger.parseInt(lineaSeparada[0]),
+        lineaSeparada[1],
+        FloatparseFloat(lineaSeparada[2])));
+        }
 
-                for(String linea:Files.readAllLines(Paths.get("src/pronostico.cvs"))){
-                String[]lineaSeparada=linea.split(";");
-                pronostico.add(new Pronostico(
-                Interger.parseInt(lineaSeparada[0]),
-                double.parseDouble(lineaSeparada[2])))
-                }
-                }
+        for(String linea:Files.readAllLines(Paths.get("src/pronostico.cvs"))){
+        String[]lineaSeparada=linea.split(";");
+        pronostico.add(new Pronostico(
+        Interger.parseInt(lineaSeparada[0]),
+        double.parseDouble(lineaSeparada[2])))
+        }
+        }
 
 private Object FloatparseFloat(String s){
         return null;

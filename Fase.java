@@ -30,7 +30,9 @@ public class Fase {
                     rond++;
                 }
             }
+            //arreglo de nombres
             nombresRonda - new String[rond];
+
 // cuando cambia el nombre lo guarda y avansa
             nombreRondaActual - "";
             rond - 0;
