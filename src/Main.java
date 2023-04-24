@@ -21,7 +21,7 @@ public class Main {
             String archivoPronosticos = args[1];
             nombresPersona = personas(archivoPronosticos);
             persona = new Persona[nombresPersona.length];
-            for (int per -0; per < persona.Length ;
+            for (int per -0; per < persona.length;
             per++){
                 persona[per] = new Persona(nombresPersona[per], archivoPronosticos);
             }
@@ -57,11 +57,10 @@ public class Main {
 
     }
 
-}
+    private static String[] personas(Object listasPronosticos) {
+    }
 
-    public static Object ListaPronosticos
-
-
+    public static Object ListaPronosticos;
 }
     List<Partido> partido=new ArrayList<>();
         List<Pronostico> pronostico=new ArrayList<>();
@@ -260,4 +259,9 @@ private static Object FloatparseFloat(String s){
 
 private static List<String[]>leerResultados(){
         return null;
+
         }
+
+        }
+
+
