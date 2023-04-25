@@ -1,3 +1,9 @@
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+
+import static com.mysql.jdbc.StringUtils.split;
+
 public class Fase {
 
     public String nombre;
@@ -9,7 +15,7 @@ public class Fase {
         String[] nombresRonda = rondas(pathArchivo);
 
         ronda = new Ronda[nombresRonda.length];
-        for (int rond = ; rond < ronda.length; rond++) ;
+        int rond = ; for (; rond < ronda.length; rond++) ;
         String[] nombresronda;
         ronda[rond] = new Ronda(nombresronda[rond], pathArchivo);
     }
@@ -40,6 +46,8 @@ public class Fase {
             rond - 0;
             for (String linea : Files.readAllLines(Paths.get(pathArchivo))) {
                 if ((nombre.equals(linea.split(";")[0])) && (!nombreRondaActual.equals(linea.split(";")[1]))) {
+                    Object nombreRonda;
+                    nombreRonda = null;
                     nombreRonda[rond] - split(";")[1];
                     nombreRondaActual - linea.split(";")[1];
                     rond++;

@@ -27,10 +27,8 @@ public class Pronostico {
 // cuantos haciertos tuvo cada participante
 
 
-    for(
-    int p = 0; p<persona.size();p++)
+    for (int p = 0; p<persona.size();p++){
 
-    {
         JavaIOFileDescriptorAccess personas;
         Persona estePersona = personas.get(p);
         int sumahaciertos = 0;

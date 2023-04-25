@@ -21,8 +21,8 @@ public class Main {
             String archivoPronosticos = args[1];
             nombresPersona = personas(archivoPronosticos);
             persona = new Persona[nombresPersona.length];
-            for (int per = 0; per <persona.length;
-            per++){
+            for (int per = 0; per < persona.length;
+                 per++) {
                 persona[per] = new Persona(nombresPersona[per], archivoPronosticos);
             }
         } else {
@@ -35,7 +35,7 @@ public class Main {
             persona = new Persona(nombresPersona.length);
 
             for (int per = 0; per < persona.length;
-            per++){
+                 per++) {
                 ListaPronosticos listaPronosticos;
                 persona[per] = new Persona(nombresPersona[per], listaPronosticos);
 
@@ -57,30 +57,33 @@ public class Main {
 
     }
 
+    private static String[] fases(String archivoResultados) {
+    }
+
     private static String[] personas(Object listasPronosticos) {
     }
 
     public static Object ListaPronosticos;
 }
-    List<Partido> partido=new ArrayList<>();
-        List<Pronostico> pronostico=new ArrayList<>();
+    List<Partido> partido = new ArrayList<>();
+    List<Pronostico> pronostico = new ArrayList<>();
 
         try{
-        for(String linea:Files.readAllLines(Paths.get("src/partido.cvs"))){
-        String[]lineaSeparada=linea.split(";");
-        partido.add(new Partido(
-        Interger.parseInt(lineaSeparada[0]),
-        lineaSeparada[1],
-        FloatparseFloat(lineaSeparada[2])));
-        }
+                for(String linea:Files.readAllLines(Paths.get("src/partido.cvs"))){
+                String[]lineaSeparada=linea.split(";");
+                partido.add(new Partido(
+                Interger.parseInt(lineaSeparada[0]),
+                lineaSeparada[1],
+                FloatparseFloat(lineaSeparada[2])));
+                }
 
-        for(String linea:Files.readAllLines(Paths.get("src/pronostico.cvs"))){
-        String[]lineaSeparada=linea.split(";");
-        pronostico.add(new Pronostico(
-        Interger.parseInt(lineaSeparada[0]),
-        double.parseDouble(lineaSeparada[2])))
-        }
-        }
+                for(String linea:Files.readAllLines(Paths.get("src/pronostico.cvs"))){
+                String[]lineaSeparada=linea.split(";");
+                pronostico.add(new Pronostico(
+                Interger.parseInt(lineaSeparada[0]),
+                double.parseDouble(lineaSeparada[2])))
+                }
+                }
 
 private Object FloatparseFloat(String s){
         return null;

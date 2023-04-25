@@ -61,6 +61,7 @@ public class Persona {
         pronostico[pro] = new Pronostico();
 
         pro = 0;
+        Object listaPronosticos;
         for (String linea : listaPronosticos.pronosticos) {
             String[] parte = Linea.split(";");
             if (nombre.equals(parte[0])) {
