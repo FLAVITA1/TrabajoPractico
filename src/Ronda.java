@@ -1,15 +1,12 @@
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
 
 public class Ronda {
     public String nombre;
     public Partido partido[];
 
-    public Ronda(String ronda, String pathArchivo) {
+    public Ronda(String ronda, String pathArchivo, Ronda Interger) {
         nombre = ronda;
 
         partido = new Partido[contarPartidos(ronda, pathArchivo)];

@@ -17,7 +17,7 @@ public class Fase {
         ronda = new Ronda[nombresRonda.length];
         int rond = ; for (; rond < ronda.length; rond++) ;
         String[] nombresronda;
-        ronda[rond] = new Ronda(nombresronda[rond], pathArchivo);
+        ronda[rond] = new Ronda(nombresronda[rond], pathArchivo, Interger);
     }
 
     private String[] rondas(String pathArchivo) {
