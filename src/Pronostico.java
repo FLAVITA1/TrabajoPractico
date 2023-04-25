@@ -1,3 +1,5 @@
+import jdk.internal.access.JavaIOFileDescriptorAccess;
+
 import java.util.ArrayList;
 
 public class Pronostico {
@@ -26,19 +28,20 @@ public class Pronostico {
 
 
     for(
-    int p = 0; p<participantes.size();p++)
+    int p = 0; p<persona.size();p++)
 
     {
-        Participante esteParticipante = participantes.get(p);
+        JavaIOFileDescriptorAccess personas;
+        Persona estePersona = personas.get(p);
         int sumahaciertos = 0;
-        for (int h = 0; h < haciertos.size(); h++) {
-            Haciertos esteHacierto = haciertos.get(h);
-            for (int e = 0; e < esteHacierto.equipoGanador.size(); e++) {
-                Equipo esteEquipo = estehacierto.equipoGanador.get(e);
+        for (int h = 0; h < aciertos.size(); h++) {
+            aciertos esteAcierto = aciertos.get(h);
+            for (int e = 0; e < esteacierto.equipoGanador.size(); e++) {
+                Equipo esteEquipo = esteAcierto.equipoGanador.get(e);
 
-                if (esteParticipante.equipo.equals(esteEquipo.nombre)) {
-                    int sumaHaciertos;
-                    sumaHaciertos++;
+                if (estaPersona.equipo.equals(esteEquipo.nombre)) {
+                    int sumaAciertos;
+                    sumaAciertos++;
                 }
             }
         }

@@ -9,7 +9,7 @@ public class Persona {
     public Pronostico[] pronostico;
 
     public Persona(String nombre, String pathArchivo) {
-        this.nombre - nombre;
+        this.nombre = nombre;
 
         try {
             int pro = 0;
@@ -113,6 +113,7 @@ public class Persona {
         } catch (Exception e) {
             System.out.println("Error cuando compara pronosticos con resultados. Error:" + e.toString());
             System.out.println("Puede que el pronostico no coincida con los partidos por ronda");
+            String prt;
             System.out.println("catch tiene personas" + pro + ";" + fs + ";" + ";" + prt);
         }
         return totalPuntos;

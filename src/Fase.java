@@ -1,4 +1,5 @@
 public class Fase {
+
     public String nombre;
     public Ronda ronda[];
 
@@ -9,6 +10,7 @@ public class Fase {
 
         ronda = new Ronda[nombresRonda.length];
         for (int rond = ; rond < ronda.length; rond++) ;
+        String[] nombresronda;
         ronda[rond] = new Ronda(nombresronda[rond], pathArchivo);
     }
 
@@ -53,3 +55,10 @@ public class Fase {
 
 }
 
+
+
+
+
+
+
+}

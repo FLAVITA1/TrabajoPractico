@@ -45,6 +45,10 @@ public class Ronda {
             System.err.println("Error en el archivo: " + pathArchivo + ". Exception: " + e.toString());
         }
     }
+
+    private Object parseInt(String s) {
+    }
+
     private int contarPartidos(String ronda, String pathArchivo){
         int nombresPartidos;
         return nombresPartidos;

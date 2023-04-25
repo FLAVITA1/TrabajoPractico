@@ -17,11 +17,11 @@ public class Main {
 
         String[] nombresPersona;
         Persona[] persona;
-        if ("sv/pronosticos.csv".equals(args[1])) {
+        if ("src/pronostico.csv".equals(args[1])) {
             String archivoPronosticos = args[1];
             nombresPersona = personas(archivoPronosticos);
             persona = new Persona[nombresPersona.length];
-            for (int per -0; per < persona.length;
+            for (int per = 0; per <persona.length;
             per++){
                 persona[per] = new Persona(nombresPersona[per], archivoPronosticos);
             }
@@ -34,7 +34,7 @@ public class Main {
             nombresPersona = personas(listasPronosticos);
             persona = new Persona(nombresPersona.length);
 
-            for (int per -0; per < persona.length ;
+            for (int per = 0; per < persona.length;
             per++){
                 ListaPronosticos listaPronosticos;
                 persona[per] = new Persona(nombresPersona[per], listaPronosticos);
@@ -263,5 +263,4 @@ private static List<String[]>leerResultados(){
         }
 
         }
-
 
