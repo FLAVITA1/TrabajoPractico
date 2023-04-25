@@ -6,7 +6,7 @@ public class ListaPronostico {
     List<String> pronosticos;
 
     public ListaPronosticos(String url, String user, string pass){
-        pronostico = new ArrayList<String>();
+        ArrayList<String> pronostico = new ArrayList<String>();
 
         try {
             //conexion BD

@@ -17,6 +17,7 @@ public class Main {
 
         String[] nombresPersona;
         Persona[] persona;
+        Object listasPronosticos;
         if ("src/pronostico.csv".equals(args[1])) {
             String archivoPronosticos = args[1];
             nombresPersona = personas(archivoPronosticos);
@@ -30,7 +31,6 @@ public class Main {
             String user = args[1].split(";")[1];
             String pass = args[1].split(";")[2];
             ListaPronostico listaronosticos = new ListaPronosticos(url, user, pass);
-            Object listasPronosticos;
             nombresPersona = personas(listasPronosticos);
             persona = new Persona(nombresPersona.length);
 
@@ -43,7 +43,7 @@ public class Main {
         }
         //lista Resultados
         String archivoResultados = args[0];
-        String[] nombresFase = fases(archivoResultados);
+        private static String[] fases String[] nombresFase = fases(archivoResultados);
 
         Fase[] fase = new Fase[nombresFase.length];
         for (int fs = 0; fs < fase.length; fs++)
@@ -55,21 +55,27 @@ public class Main {
         }
 
 
+        (String archivoResultados){
+        }
+
+        private static String[] personas (Object listasPronosticos){
+        }
+
+        public static Object ListaPronosticos;
     }
 
-    private static String[] fases(String archivoResultados) {
+    private static String[] personas(String archivoPronosticos) {
+        String[] strings = new String[0];
+        String[] strings1 = strings;
+        return strings1;
     }
 
-    private static String[] personas(Object listasPronosticos) {
-    }
-
-    public static Object ListaPronosticos;
-}
     List<Partido> partido = new ArrayList<>();
     List<Pronostico> pronostico = new ArrayList<>();
 
         try{
-                for(String linea:Files.readAllLines(Paths.get("src/partido.cvs"))){
+        Integer Interger;
+        for(String linea:Files.readAllLines(Paths.get("src/partido.cvs"))){
                 String[]lineaSeparada=linea.split(";");
                 partido.add(new Partido(
                 Interger.parseInt(lineaSeparada[0]),
@@ -92,7 +98,7 @@ private Object FloatparseFloat(String s){
         }
 
 
-public Object ListaPronosticos;
+public static Object ListaPronosticos;
 
         Persona(String nombre,ListaPronosticos listaPronostico){
         this.nombre=nombre;
@@ -107,7 +113,7 @@ public Object ListaPronosticos;
         pronostico[pro]=new Pronostico();
         pro=0;
         }
-        }
+
         ////////////////////////////////
         List<String[]>resultados=leerResultados();
 public static List<String[]>leerPronosticos List<String[]>pronosticos=leerPronosticos();
@@ -255,7 +261,7 @@ public static List<String[]>leerResultados(){
 
         return pronosticos;
         }
-        }
+
 
 private static Object FloatparseFloat(String s){
         }
@@ -267,3 +273,4 @@ private static List<String[]>leerResultados(){
 
         }
 
+ }  }
